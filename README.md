@@ -13,3 +13,9 @@ Como executar este projeto?
 Ferramentas utilizadas:
 - React;
 - Redux.
+  
+Integrantes do grupo:
+
+Arisa Abiko Sakaguti, 800357; 
+João Vitor Fidelis Cardozo, 769719;
+Thales Winther, 802499.
