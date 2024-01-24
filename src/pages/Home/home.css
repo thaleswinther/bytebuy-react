@@ -7,3 +7,29 @@
     flex: auto;
     margin: 1%;
 }
+
+.custom-banner {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    margin-left: 26px;
+    cursor: pointer;
+}
+
+.centered-row {
+    display: flex;
+    justify-content: center;
+}
+
+.banner {
+    /* background: url('resources/static/image/banner_bytebuy.png') no-repeat center center/contain; */
+    background-color: #000;
+    height: 30rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: contain;
+  }
