@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/slices/shoppingCartSlice";
+import { useNavigate } from "react-router-dom";
 
-function ProductCard({ title, imgsrc, description, price }) {
+function ProductCard({ title, imgsrc, description, price, category, id }) {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleProduct = () => {
+    const product = {
+      title: title,
+      imgsrc: imgsrc,
+      description: description,
+      standardPrice: price,
+      category: category,
+      id: id,
+    };
+    dispatch(addProduct(product));
+    navigate("/carrinhodecompras");
+  };
+
   return (
     <Card style={{ width: "15em", height: "25em" }}>
       <Card.Img
@@ -45,7 +64,11 @@ function ProductCard({ title, imgsrc, description, price }) {
         <Card.Text style={{ maxHeight: "6rem", overflow: "hidden" }}>
           R${price}
         </Card.Text>
-        <Button variant="primary" style={{ maxWidth: "100%" }}>
+        <Button
+          variant="primary"
+          style={{ maxWidth: "100%" }}
+          onClick={handleProduct}
+        >
           Adicionar ao carrinho
         </Button>
       </Card.Body>

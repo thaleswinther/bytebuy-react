@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import NavBar from "../../components/NavBar.js";
 
 import "../Home/home.css";
-function Contato() {
+function Contact() {
   return (
     <div>
       <NavBar />
@@ -42,4 +42,4 @@ function Contato() {
   );
 }
 
-export default Contato;
+export default Contact;

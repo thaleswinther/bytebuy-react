@@ -7,7 +7,7 @@ import ProductCard from "../../components/ProductCard/ProductCard.js";
 
 import banner2 from "../../assets/banner_2.png";
 import banner3 from "../../assets/banner_3.png";
-import banner4 from "../../assets/banner_4.png"
+import banner4 from "../../assets/banner_4.png";
 
 import "./home.css";
 
