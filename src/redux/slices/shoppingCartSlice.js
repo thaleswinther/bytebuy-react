@@ -14,22 +14,25 @@ const shoppingCartSlice = createSlice({
   reducers: {
     addProduct(state, action) {
       const product = action.payload;
-      state.addedProducts.push({
-        title: product.title,
-        imgsrc: product.imgsrc,
-        description: product.description,
-        standardPrice: product.standardPrice,
-        priceUpdated: product.standardPrice,
-        category: product.category,
-        id: product.id,
-        quantity: 1,
-        userEmail: product.userEmail,
-      });
-      state.totalPrice =
-        (state.discountGranted > 0 ? state.discountGranted : 1) *
-        state.addedProducts.reduce((accumulator, currentProduct) => {
-          return accumulator + currentProduct.priceUpdated;
-        }, 0);
+      const productExists = state.addedProducts.find((p) => p.id === product.id);
+      if (!productExists) {
+        state.addedProducts.push({
+          title: product.title,
+          imgsrc: product.imgsrc,
+          description: product.description,
+          standardPrice: product.standardPrice,
+          priceUpdated: product.standardPrice,
+          category: product.category,
+          id: product.id,
+          quantity: 1,
+          userEmail: product.userEmail,
+        });
+        state.totalPrice =
+          (state.discountGranted > 0 ? state.discountGranted : 1) *
+          state.addedProducts.reduce((accumulator, currentProduct) => {
+            return accumulator + currentProduct.priceUpdated;
+          }, 0);
+      }
     },
     updateQuantity(state, action) {
       const { id, operation } = action.payload;
@@ -74,7 +77,7 @@ const shoppingCartSlice = createSlice({
         state.addedProducts.reduce((accumulator, currentProduct) => {
           return accumulator + currentProduct.priceUpdated;
         }, 0);
-    }
+    },
   },
 });
 
