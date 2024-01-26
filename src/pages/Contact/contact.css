@@ -1,4 +1,70 @@
-.map-container {
-    margin-left: 32px;
-    margin-right: 32px;
+#contact-banner {
+    background-color: #6874E8;
+    color: white;
+    padding: 136px;
+    text-align: center;
   }
+  
+  #contact-banner h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-right: 48px;
+  }
+  
+  #contact-banner p {
+    font-size: 1.2em;
+  }
+  
+  .row.px-md-5 {
+    margin: 30px 0; 
+  }
+  
+  .form-group {
+    margin-bottom: 20px; 
+  }
+  
+  .form-control {
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: black;
+    height: 50px;
+  }
+  
+  
+    .large-textarea {
+        margin-top: 24px;
+        height:  232px; 
+    }
+
+  .submit-button {
+    margin-top: 20px;
+    width: 112px;
+    height: 64px;
+    background-color: #6874E8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 24px;
+    margin-left: 552px;
+    font-size: 1.1em;
+  }
+  
+  h1 {
+    margin-left: 56px;
+  }
+  
+  .map-container {
+    margin-left: 64px;
+    margin-right: 64px;
+  }
+  
+  @media (max-width: 768px) {
+    .row.px-md-5 {
+      flex-direction: column;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+  }
+  

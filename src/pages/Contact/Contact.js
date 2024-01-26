@@ -38,38 +38,45 @@ function Contact() {
     <div>
       <NavBar />
 
-      <Form>
-        <Form.Group className="mb-3" controlId="formName">
-          <Form.Label>Nome</Form.Label>
-          <Form.Control type="text" placeholder="Digite seu nome" />
-        </Form.Group>
+      <div id="contact-banner">
+        <h1>ENTRE EM CONTATO</h1>
+        <p>Alguma dúvida? Sugestão de <br></br> produto ou avaliação?</p>
+      </div>
 
-        <Form.Group className="mb-3" controlId="formEmail">
-          <Form.Label>E-mail</Form.Label>
-          <Form.Control type="email" placeholder="Digite seu e-mail" />
-        </Form.Group>
+      <div className="row px-md-5">
+        <div className="col-md-6">
+          <Form>
+            <Form.Group controlId="formName">
+              <Form.Label>Nome</Form.Label>
+              <Form.Control type="text" placeholder="Digite seu nome" />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formPhone">
-          <Form.Label>Número de Telefone</Form.Label>
-          <Form.Control type="tel" placeholder="Digite o telefone" />
-        </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label>E-mail</Form.Label>
+              <Form.Control type="email" placeholder="Digite seu e-mail" />
+            </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formTextArea">
-          <Form.Label>Mensagem</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={3}
-            placeholder="Digite sua mensagem"
-          />
-        </Form.Group>
+            <Form.Group controlId="formPhone">
+              <Form.Label>Número de Telefone</Form.Label>
+              <Form.Control type="tel" placeholder="(99) 9999-9999" />
+            </Form.Group>
+          </Form>
+        </div>
 
-        <Button variant="primary" type="submit">
-          Enviar
-        </Button>
-      </Form>
+        <div className="col-md-6">
+          <Form>
+            <Form.Group controlId="formTextArea">
+              <Form.Control as="textarea"  className="large-textarea"rows={3} placeholder="Descreva aqui como podemos te ajudar" />
+            </Form.Group>
 
+            <Button variant="primary" type="submit" className="submit-button">
+              Enviar
+            </Button>
+          </Form>
+        </div>
+      </div>
 
-      <h1 className="map-container">Onde estamos localizados</h1>
+      <h1 className="mt-4 ml-4">Onde estamos localizados</h1>
 
       <div className="map-container">
         <MapContainer
@@ -77,7 +84,6 @@ function Contact() {
           handleLocationError={handleLocationError}
         />
       </div>
-
     </div>
   );
 }

@@ -14,13 +14,13 @@ function NavBar() {
       expand="lg"
       bg="black"
       variant="dark"
-      style={{ height: "90px" }}
+      style={{ height: "72px" }}
     >
       <Navbar.Brand href="/" style={{ marginLeft: "20px" }}>
         <img
           src={logotipo}
           alt="Byte Buy"
-          style={{ width: "100px", height: "auto" }}
+          style={{ width: "72px", height: "auto", marginLeft: "32px"}}
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
