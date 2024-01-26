@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import NavBar from "../../components/NavBar.js";
+import Footer from "../../components/Footer.js";
 import Button from "react-bootstrap/Button";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -53,25 +54,28 @@ function ShoppingCart() {
         </div>
       )}
       {!thereIsProduct && (
-        <div className="d-flex justify-content-center align-items-center card-wrapper">
-          <div className="text-center">
-            <h2>Que pena, o carrinho está vazio!</h2>
-            <h3>Vamos conhecer nossos produtos?</h3>
-            <Button
-              variant="primary"
-              className="mt-4"
-              onClick={() => navigate("/")}
-            >
-              Ir para produtos
-            </Button>
+        <>
+          <div className="d-flex justify-content-center align-items-center card-wrapper">
+            <div className="text-center">
+              <h2>Que pena, o carrinho está vazio!</h2>
+              <h3>Vamos conhecer nossos produtos?</h3>
+              <Button
+                variant="primary"
+                className="mt-4"
+                onClick={() => navigate("/")}
+              >
+                Ir para produtos
+              </Button>
+            </div>
+            <img
+              src={ShoppingCartImage}
+              alt="BackgroundShoppingCart"
+              className="img-fluid p-5"
+              style={{ width: "60%", height: "60%" }}
+            />
           </div>
-          <img
-            src={ShoppingCartImage}
-            alt="BackgroundShoppingCart"
-            className="img-fluid p-5"
-            style={{ width: "60%", height: "60%" }}
-          />
-        </div>
+          <Footer />
+        </>
       )}
     </>
   );

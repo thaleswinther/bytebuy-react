@@ -14,7 +14,9 @@ const shoppingCartSlice = createSlice({
   reducers: {
     addProduct(state, action) {
       const product = action.payload;
-      const productExists = state.addedProducts.find((p) => p.id === product.id);
+      const productExists = state.addedProducts.find(
+        (p) => p.id === product.id
+      );
       if (!productExists) {
         state.addedProducts.push({
           title: product.title,
@@ -25,7 +27,6 @@ const shoppingCartSlice = createSlice({
           category: product.category,
           id: product.id,
           quantity: 1,
-          userEmail: product.userEmail,
         });
         state.totalPrice =
           (state.discountGranted > 0 ? state.discountGranted : 1) *
@@ -78,6 +79,12 @@ const shoppingCartSlice = createSlice({
           return accumulator + currentProduct.priceUpdated;
         }, 0);
     },
+    checkout(state, action){
+      state.addedProducts = [];
+      state.totalPrice = 0;
+      state.appliedCoupons = [];
+      state.discountGranted = 0;      
+    }
   },
 });
 
@@ -87,5 +94,6 @@ export const {
   updateQuantity,
   removeProduct,
   updateAppliedCouponsFromStorage,
+  checkout
 } = shoppingCartSlice.actions;
 export default shoppingCartSlice.reducer;

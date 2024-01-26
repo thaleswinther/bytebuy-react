@@ -29,6 +29,9 @@ function NavBar() {
           <Nav.Link href="/" className="text-white">
             Home
           </Nav.Link>
+          <Nav.Link href="/carrinhodecompras" className="text-white">
+            Carrinho
+          </Nav.Link>
           <Nav.Link href="/contato" className="text-white">
             Contato
           </Nav.Link>

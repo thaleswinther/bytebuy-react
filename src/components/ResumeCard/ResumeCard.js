@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 import { useForm } from "react-hook-form";
-import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
-import {
-  updateTotalPrice,
-  updateAppliedCouponsFromStorage,
-} from "../../redux/slices/shoppingCartSlice";
+
+import { checkout, updateAppliedCouponsFromStorage } from "../../redux/slices/shoppingCartSlice";
 import "react-toastify/dist/ReactToastify.css";
+
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 function ResumeCard({ price }) {
   const [couponText, setCouponText] = useState(null);
@@ -17,13 +16,11 @@ function ResumeCard({ price }) {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const totalPrice = useSelector((state) => state.shoppingCart.totalPrice);
   const appliedCoupons = useSelector(
     (state) => state.shoppingCart.appliedCoupons
   );
@@ -58,7 +55,7 @@ function ResumeCard({ price }) {
   };
 
   const onSubmit = (data) => {
-    console.log("Compra finalizada!");
+    dispatch(checkout());
   };
 
   return (

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/slices/shoppingCartSlice";
 import { useNavigate } from "react-router-dom";
+
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 function ProductCard({ title, imgsrc, description, price, category, id }) {
   const navigate = useNavigate();
