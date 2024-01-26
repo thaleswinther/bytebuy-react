@@ -7,7 +7,7 @@ import ProductCard from "../../components/ProductCard/ProductCard.js";
 
 import banner2 from "../../assets/banner_2.png";
 import banner3 from "../../assets/banner_3.png";
-import banner4 from "../../assets/banner_4.png";
+import banner_bytebuy from "../../assets/banner_bytebuy.png";
 
 import "./home.css";
 
@@ -50,7 +50,7 @@ function Home() {
     <div>
       <NavBar />
       <div className="banner">
-        <img src={banner4} alt="Banner 4" className="img-fluid custom-banner" />
+        <img src={banner_bytebuy} alt="Banner 4" className="img-fluid banner" />
       </div>
       <Carousel className="mb-4 mt-4 carousel-col">
         {renderizaCardsProdutos()}

@@ -10,7 +10,7 @@
 
 .custom-banner {
     width: 95%;
-    height: 95%;
+    height: 85%;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -25,9 +25,8 @@
 }
 
 .banner {
-    /* background: url('resources/static/image/banner_bytebuy.png') no-repeat center center/contain; */
     background-color: #000;
-    height: 30rem;
+    height: 25rem;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
