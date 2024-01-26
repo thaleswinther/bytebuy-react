@@ -69,7 +69,7 @@ function Contact() {
 
             <Form.Group controlId="formPhone">
               <Form.Label>Número de Telefone</Form.Label>
-              <Form.Control type="tel" placeholder="(99) 9999-9999" />
+              <Form.Control type="tel" placeholder="Digite seu telefone" />
             </Form.Group>
           </Form>
         </div>

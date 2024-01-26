@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Carousel, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import NavBar from "../../components/NavBar.js";
 import Footer from "../../components/Footer.js";
@@ -21,40 +21,29 @@ function Home() {
       .catch((err) => console.log(err));
   }, []);
 
-  const renderizaCardsProdutos = () => {
-    let carouselItems = [];
-    for (let i = 0; i < products.length; i += 4) {
-      carouselItems.push(
-        <Carousel.Item key={i}>
-          <Row className="centered-row">
-            {products.slice(i, i + 4).map((product) => (
-              <Col key={product.id} md={2} className="mb-4">
-                <ProductCard
-                  title={product.title}
-                  imgsrc={product.image}
-                  description={product.description}
-                  price={product.price}
-                  category={product.category}
-                  id={product.id}
-                />
-              </Col>
-            ))}
-          </Row>
-        </Carousel.Item>
-      );
-    }
-    return carouselItems;
-  };
-
   return (
     <div>
       <NavBar />
       <div className="banner">
         <img src={banner_bytebuy} alt="Banner 4" className="img-fluid banner" />
       </div>
-      <Carousel className="mb-4 mt-4 carousel-col">
-        {renderizaCardsProdutos()}
-      </Carousel>
+
+      <div className="product-container">
+        <Row className="mb-4 mt-4">
+          {products.map((product) => (
+            <Col key={product.id} sm={6} md={4} lg={3} xl={3} className="mb-4 product-item" >
+              <ProductCard
+                title={product.title}
+                imgsrc={product.image}
+                description={product.description}
+                price={product.price}
+                category={product.category}
+                id={product.id}
+              />
+            </Col>
+          ))}
+        </Row>
+      </div>
 
       <section id="banners" className="mt-4">
         <div className="row">

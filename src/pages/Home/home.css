@@ -32,3 +32,12 @@
     background-position: center;
     object-fit: contain;
 }
+
+.product-container {
+    margin-left: 72px;
+    margin-right: 32px;
+}
+
+.product-item {
+    margin-right: -72px; 
+  }
