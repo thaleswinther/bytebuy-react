@@ -14,7 +14,7 @@ function NavBar() {
       expand="lg"
       bg="black"
       variant="dark"
-      style={{ height: "108px" }}
+      style={{ height: "90px" }}
     >
       <Navbar.Brand href="/" style={{ marginLeft: "20px" }}>
         <img
@@ -29,9 +29,6 @@ function NavBar() {
           <Nav.Link href="/" className="text-white">
             Home
           </Nav.Link>
-          <Nav.Link href="/carrinhodecompras" className="text-white">
-            Carrinho
-          </Nav.Link>
           <Nav.Link href="/contato" className="text-white">
             Contato
           </Nav.Link>
@@ -39,7 +36,7 @@ function NavBar() {
             Localização
           </Nav.Link>
           <Nav.Link
-            href="/"
+            href="/carrinhodecompras"
             className="text-white d-flex align-items-center"
             style={{ marginRight: "20px" }}
           >

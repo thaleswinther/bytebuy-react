@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import NavBar from "../../components/NavBar.js";
+import MapContainer from "./MapContainer.js";
+import "./contact.css";
 
-import "../Home/home.css";
 function Contact() {
+  const [userLocation, setUserLocation] = useState(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        function () {
+          handleLocationError(true);
+        }
+      );
+    } else {
+      handleLocationError(false);
+    }
+  }, []);
+
+  const handleLocationError = (browserHasGeolocation) => {
+    alert(
+      browserHasGeolocation
+        ? "Erro: O serviço de geolocalização falhou."
+        : "Erro: Seu navegador não suporta geolocalização."
+    );
+  };
+
   return (
     <div>
       <NavBar />
@@ -38,6 +67,17 @@ function Contact() {
           Enviar
         </Button>
       </Form>
+
+
+      <h1 className="map-container">Onde estamos localizados</h1>
+
+      <div className="map-container">
+        <MapContainer
+          userLocation={userLocation}
+          handleLocationError={handleLocationError}
+        />
+      </div>
+
     </div>
   );
 }
