@@ -14,19 +14,19 @@ const Footer = () => {
           <div className="col-md-3 col-sm-6">
             <img src={bytebuy_logo} alt="Byte Buy" style={{ width: '112px' }} />
           </div>
-          <div className="col-md-3 col-sm-6">
-            <p>ByteStore store 2023</p>
+          <div className="col-md-3 col-sm-6" style={{marginTop: "10px"}}>
+            <p>ByteStore 2024</p>
             <p>Todos os direitos reservados</p>
           </div>
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" style={{marginTop: "10px"}}>
             <p>Região</p>
             <p>
               <img src={pin_icon} alt="Location Pin" className="pin" /> Trabalhamos em todo território nacional
             </p>
           </div>
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" style={{marginTop: "3px"}}>
             <p>Sobre</p>
-            <p>Nome empresa</p>
+            <p>ByteBuy</p>
             <p>Políticas de privacidade</p>
           </div>
         </div>
