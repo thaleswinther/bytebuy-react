@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import NavBar from "../../components/NavBar.js";
@@ -7,8 +7,13 @@ import "./contact.css";
 
 function Contact() {
   const [userLocation, setUserLocation] = useState(null);
+  const ondeEstamosRef = useRef(null);
 
   useEffect(() => {
+    if (window.location.hash === "#onde-estamos") {
+      scrollToOndeEstamos();
+    }
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
@@ -32,6 +37,12 @@ function Contact() {
         ? "Erro: O serviço de geolocalização falhou."
         : "Erro: Seu navegador não suporta geolocalização."
     );
+  };
+
+  const scrollToOndeEstamos = () => {
+    if (ondeEstamosRef && ondeEstamosRef.current) {
+      ondeEstamosRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -78,7 +89,7 @@ function Contact() {
 
       <h1 className="mt-4 ml-4">Onde estamos localizados</h1>
 
-      <div className="map-container">
+      <div className="map-container" ref={ondeEstamosRef} id="onde-estamos">
         <MapContainer
           userLocation={userLocation}
           handleLocationError={handleLocationError}

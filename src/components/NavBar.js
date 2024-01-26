@@ -32,7 +32,7 @@ function NavBar() {
           <Nav.Link href="/contato" className="text-white">
             Contato
           </Nav.Link>
-          <Nav.Link href="/localizacao" className="text-white">
+          <Nav.Link href="/contato#onde-estamos" className="text-white">
             Localização
           </Nav.Link>
           <Nav.Link
