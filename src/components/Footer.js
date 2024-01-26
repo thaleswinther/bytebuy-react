@@ -8,32 +8,26 @@ import bytebuy_logo from "../assets/bytebuy_logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white pt-4 pb-4">
+    <footer className="bg-black text-white pt-2 pb-0">
       <div className="container">
         <div className="row">
-          <div className="col-md">
-            <img src={bytebuy_logo} alt="Byte Buy" className="img-fluid" />
+          <div className="col-md-3 col-sm-6">
+            <img src={bytebuy_logo} alt="Byte Buy" style={{ width: '112px' }} />
           </div>
-          <div className="col-md">
-            <p>ByteStore store 2024</p>
+          <div className="col-md-3 col-sm-6">
+            <p>ByteStore store 2023</p>
             <p>Todos os direitos reservados</p>
           </div>
-          <div className="col-md">
+          <div className="col-md-3 col-sm-6">
             <p>Região</p>
             <p>
-              <img src={pin_icon} alt="Location Pin" className="mr-2" />
-              Trabalhamos em todo território nacional
+              <img src={pin_icon} alt="Location Pin" className="pin" /> Trabalhamos em todo território nacional
             </p>
           </div>
-          <div className="col-md">
+          <div className="col-md-3 col-sm-6">
             <p>Sobre</p>
             <p>Nome empresa</p>
             <p>Políticas de privacidade</p>
-          </div>
-          <div className="col-md">
-            <img className="mr-2" src={instagram_icon} alt="Instagram" />
-            <img className="mr-2" src={whatsapp_icon} alt="WhatsApp" />
-            <img src={linkedin_icon} alt="LinkedIn" />
           </div>
         </div>
       </div>

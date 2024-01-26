@@ -59,6 +59,7 @@
   .map-container {
     margin-left: 64px;
     margin-right: 64px;
+    margin-bottom: 56px;
   }
   
   @media (max-width: 768px) {

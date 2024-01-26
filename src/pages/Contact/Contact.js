@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import NavBar from "../../components/NavBar.js";
 import MapContainer from "./MapContainer.js";
+import Footer from "../../components/Footer.js";
 import "./contact.css";
 
 function Contact() {
@@ -95,6 +96,7 @@ function Contact() {
           handleLocationError={handleLocationError}
         />
       </div>
+      <Footer />
     </div>
   );
 }
