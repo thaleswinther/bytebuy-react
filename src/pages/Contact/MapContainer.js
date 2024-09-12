@@ -8,7 +8,7 @@ const MapContainer = ({ userLocation, handleLocationError }) => {
 
   const [mapLoaded, setMapLoaded] = useState(false);
 
-  const byteBuy = { lat: -21.9838, lng: -47.8836 };
+  const byteBuy = { lat: -21.7, lng: -47.8836 };
 
   const mapOptions = {
     zoom: 15,
